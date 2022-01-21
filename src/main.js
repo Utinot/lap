@@ -22,7 +22,7 @@ router.on({
     "/admin/dashboard": () => print(DashboardPage), 
     "/admin/news": () => print(AdminNewsPage),
     "/admin/news/add": () => print(AdminNewsAddPage),
-    "/admin/news/list": () => print(list.render),
+    "/admin/news/list": () => print(list),
     "/signin": () => print(signin),
     "/signup": () => print(signup), 
     // "/signin": () => {
