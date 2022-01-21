@@ -24,7 +24,7 @@ router.on({
     "/admin/news/add": () => print(AdminNewsAddPage),
     "/admin/news/list": () => print(list.render),
     "/signin": () => print(signin),
-    "/signup": () => print(signup),
+    "/signup": () => print(signup), 
     // "/signin": () => {
     //     print(signin.render());
     // },

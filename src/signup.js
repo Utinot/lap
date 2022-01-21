@@ -261,7 +261,7 @@ const signup = {
 </div>
 </div>
 </div>
-   `;
+   `; 
   },
 };
 export default signup;

@@ -29,7 +29,7 @@ const DashboardPage = {
                 </div>
                 <!-- /End replace -->
             </div>
-            </main>
+            </main> 
         </div>
         `;
     },

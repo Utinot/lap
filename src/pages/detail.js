@@ -10,7 +10,7 @@ const DetailNewsPage = {
                 <p>${data.desc}</p>
             `);
 
-        // const result = data.find((post) => post.id === id);
+        // const result = data.find((post) => post.id === id );
     },
 };
 export default DetailNewsPage;
