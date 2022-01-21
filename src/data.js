@@ -42,5 +42,4 @@ const data = [
         id: "6",
     },
 ];
-
 export default data;

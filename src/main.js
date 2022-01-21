@@ -1,30 +1,35 @@
 import Navigo from "navigo";
-import Header from "./components/header";
 import AboutPage from "./pages/about";
-import DetailNewsPage from "./pages/detailNews";
+import DashboardPage from "./pages/admin/dashboard";
+import AdminNewsPage from "./pages/admin/news";
+import AdminNewsAddPage from "./pages/admin/news/add";
+import list from "./pages/admin/news/list";
+import DetailNewsPage from "./pages/detail";
 import HomePage from "./pages/home";
-import NewsPage from "./pages/news";
+import signin from "./signin";
+import signup from "./signup";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
-const print = (content) => {
-    document.getElementById("header").innerHTML = Header.render();
-    document.getElementById("app").innerHTML = content;
+const print = async (content, id) => {
+    document.getElementById("app").innerHTML = await content.render(id);
 };
 
 router.on({
-    "/": () => {
-        print(HomePage.render());
-    },
-    "/about": () => {
-        print(AboutPage.render());
-    },
-    "/news": () => {
-        print(NewsPage.render());
-    },
-    "/news/:id": ({ data }) => {
-        const { id } = data;
-        print(DetailNewsPage.render(id));
-    },
+    "/": () => print(HomePage),
+    "/about": () => print(AboutPage),
+    "/news/:id": (value) => print(DetailNewsPage, value.data.id),
+    "/admin/dashboard": () => print(DashboardPage),
+    "/admin/news": () => print(AdminNewsPage),
+    "/admin/news/add": () => print(AdminNewsAddPage),
+    "/admin/news/list": () => print(list.render),
+    "/signin": () => print(signin),
+    "/signup": () => print(signup),
+    // "/signin": () => {
+    //     print(signin.render());
+    // },
+    // "/signup": () => {
+    //     print(signup.render());
+    // },
 });
 router.resolve();
