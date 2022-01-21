@@ -19,7 +19,7 @@ router.on({
     "/": () => print(HomePage),
     "/about": () => print(AboutPage),
     "/news/:id": (value) => print(DetailNewsPage, value.data.id),
-    "/admin/dashboard": () => print(DashboardPage),
+    "/admin/dashboard": () => print(DashboardPage), 
     "/admin/news": () => print(AdminNewsPage),
     "/admin/news/add": () => print(AdminNewsAddPage),
     "/admin/news/list": () => print(list.render),
